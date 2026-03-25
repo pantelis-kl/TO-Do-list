@@ -1,0 +1,174 @@
+body{
+    margin:0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgba(236, 236, 236, 0.719);
+}
+
+header{
+    width: 100%;
+    text-align: center;
+}
+
+header .to-do-header{
+    font-size: 50px;
+}
+
+main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+main .add-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.add-container label{
+    font-size: 20px;
+    font-weight:400
+}
+
+.add-container textarea{
+    width: 300px;
+    resize: none;
+    height: 100px;
+    font-size: 20px;
+}
+
+.add-container .add-button{
+    width: 150px;
+    align-self: center;
+    margin-top: 10px;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 30px;
+    border: none;
+    background-color: rgb(0, 192, 0);
+    color: #fff;
+    cursor: pointer;
+}
+
+.add-container .add-button:hover{
+    background-color: rgb(0, 158, 0);
+}
+
+main .tasks-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -30px;
+}
+
+main .task-labels{
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+}
+
+.task-labels .mark-as-completed-header{
+    margin-left: 170px;
+}
+
+.task-labels .move-up-header{
+    margin-left: 50px;
+}
+
+.task-labels h2{
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.tasks-container .task-item{
+    box-shadow: 10px 10px 13px rgb(34, 34, 34);
+    width: 600px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    padding: 15px;
+    border-radius: 25px;;
+    background-color: #ffff;
+    margin-top:30px
+}
+
+.task-item .task-text{
+    align-self: flex-start;
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap:wrap;
+    width: 300px;
+    padding: 10px;
+
+}
+
+.task-text .delete-edit-buttons{
+    margin-bottom: -15px;
+    margin-top: 5px;
+}
+
+.task-text .text{
+    flex: 1 1 100%;
+    word-break: break-word;
+}
+
+.delete-edit-buttons i{
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.delete-edit-buttons .fa-solid.fa-trash{
+    color: red;
+}
+
+.delete-edit-buttons .fa-solid.fa-pen-to-square{
+    color: rgb(35, 76, 255);
+    margin-left: 20px;
+}
+
+.task-item [type="checkbox"]{
+    margin-left: 40px;
+    height: 20px;
+    width: 20px;
+}
+
+.error-message{
+    color: red;
+    align-self: center;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.checked-task{
+    box-shadow: 10px 10px 13px rgb(34, 34, 34);
+    width: 600px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    padding: 15px;
+    border-radius: 25px;;
+    background-color: #ffff;
+    margin-top: 30px;
+    filter: blur(10px);
+}
+
+.checkbox-container{
+    width: 220px;
+}
+
+.task-item .fa-solid.fa-chevron-up{
+    background-color: blue;
+    color: #ffff;
+    padding: 10px;
+    border-radius: 30px;
+    cursor: pointer;
+}
