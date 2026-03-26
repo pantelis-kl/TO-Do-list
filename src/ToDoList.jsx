@@ -33,12 +33,8 @@ function ToDoList(){
     }
 
     const replaceTask=(index,editTask)=>{
-        setTasks(tasks.filter((_,i)=>index!==i));
-        setTasks(t=>([
-            ...t,
-            [index]=editTask
-        ]));
-        console.log(tasks);
+        if(editTask.trim()!=="")
+            setTasks(t => t.map((task,i) => i===index ? editTask : task));
     }
 
     function disableMoveButtons(){
@@ -81,7 +77,23 @@ function ToDoList(){
         setEditing(e=>({
             ...e,
             [index]:false,
-        }))
+        }));
+        checkPreviousMark(index);
+    }
+
+    function checkPreviousMark(index){
+        if(markedTask[index+1]){
+            setMarkedTask(m=>({
+                ...m,
+                [index]:true,
+                [index+1]:false
+            }))
+        }else if(markedTask[index]&& index===tasks.length-1){
+            setMarkedTask(m=>({
+                ...m,
+                [index]:false
+            }))
+        }
     }
 
     function resetMarkedIndex(index){
@@ -166,7 +178,6 @@ function ToDoList(){
             disabledButton={disabledButton}
             disableDownButton={disableDownButton}
             moveDivDown={moveDivDown}
-            markedIndex={markedIndex}
             editing={editing}
             handleEditing={handleEditing}
             replaceTask={replaceTask}/>

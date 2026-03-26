@@ -8,7 +8,7 @@ function TaskInput({taskInput,displayError,emptyTaskError,addTask,checkTaskConte
                 onKeyUp={
                     e=>{
                         if(e.key==='Enter')
-                           addTask()
+                           addTask();
                     }
                 }></textarea>
                 <p className='error-message'>{displayError?emptyTaskError:""}</p>
